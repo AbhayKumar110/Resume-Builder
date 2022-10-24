@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="style.css">
+    <title>D-Resume Builder</title>
+</head>
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center  my -2">Resume Builder</h1>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <h3>Personal Information</h3>
+ 
+              <div class="form-group ">
+
+                 <label for="namefield">Your Name</label>
+                 <input type="text" id="namefield" class="form-control" placeholder="Enter name"/>
+
+                </div>
+
+                <div class="form-group mt-2">
+
+                    <label for="emailid">Your UserId</label>
+                    <input type="text" id="UserId" class="form-control" placeholder="Enter UserId"/>
+   
+                </div>
+
+                <div class="form-group mt-2">
+
+                    <label for="Contact">Your Contact</label>
+                    <input type="text" id="Contact" class="form-control" placeholder="Enter Mobile_Number"/>
+   
+                </div>
+
+                <div class="form-group mt-2">
+
+                    <label for="Address">Address</label>
+                    <textarea 
+                      type="text" id="Address" class="form-control" placeholder="Address">
+                    </textarea>
+                </div>
+
+
+                <div class="form-group mt-3">
+                    <label for="">Select Your Photo</label>
+                    <input id="imgField" type="file" class="form-control">
+                </div>
+
+                <p class="text-secondary my-3"> Important Links</p>
+
+
+                <div class="form-group mt-2">
+
+                    <label for="Social">Facebook</label>
+                    <input type="text" id="FbField" class="form-control" placeholder="Enter Facebook_Id"/>
+   
+                </div>
+
+
+                <div class="form-group mt-2">
+
+                    <label for="Social-Insta">Instagram</label>
+                    <input type="text" id="InstaField" class="form-control" placeholder="Enter Instagram_id"/>
+   
+                </div>
+
+                <div class="form-group mt-2">
+
+                    <label for="Linkdin">LinkedIn</label>
+                    <input type="text" id="LinkField" class="form-control" placeholder="Enter LinkedIn_Id"/>
+   
+                </div>
+
+                <div class="form-group mt-2">
+
+                    <label for="github">Github</label>
+                    <input type="text" id="GitField" class="form-control" placeholder="Enter Github_Link"/>
+   
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <h3>Professional Information</h3>
+
+
+                <div class="form-group mt-2">
+
+                    <label for="">Objective</label>
+                    <textarea 
+                      type="text" class="form-control ObField" placeholder="Enter here" id="ObjectiveField">
+                    </textarea>
+
+                    <div class="form-group mt-2" id="we">
+
+                        <label for="">Work Experience</label>
+                        <textarea 
+                          type="text" class="form-control weField" placeholder="Enter here" id="weField">
+                        </textarea>
+
+                        <div class="container text-center mt-2" id="weAddButton">
+                            <button onclick="addNewWField()" class="btn btn-primary btn-sm">Add</button>
+                            <button onclick="deleteNewWField()" class="btn btn-primary btn-sm">Remove</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2" id="aq">
+
+                        <label for="">Academic Qualification</label>
+                        <textarea 
+                          type="text" class="form-control eqField" placeholder="Enter here">
+                        </textarea>
+
+
+                        <div class="container text-center mt-2 " id="aqAddButton">
+                            <button onclick="addField()" class="btn btn-primary btn-sm">Add</button>
+                            <button onclick="addField()" class="btn btn-primary btn-sm">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container text-center mt-5">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg ">Generate CV</button>
+        </div>
+
+    </div>
+    
+
+
+
+
+    <div class="container" id="cv-template">
+        <div class="row">
+
+            <div class="col-md-4 text-center py-5 background">
+                <!-- first Colum -->
+
+                <img src="./img/img.png" alt="" class="img-fluid myimage"/ id="imgT">
+
+
+                <div class="container">
+                    <p id="nameT1">ABHAY KUMAR DUEBY</p>
+                    <p id="EmailT">abc@gmail.com</p>
+                    <p id="ContactT">+9123455678, +91234568932</p>
+                    <p id="AddressT">5698907/387879 Sector5 Greator Noida, India</p>
+                <hr />
+
+                <p id="fbT"><a href="#1">https://www.facebook.com</a></p>
+                <p id="inT"><a href="#1">https://www.instagram.com</a></p>
+                <p id="LkT"><a href="#1">https://www.LinkedIn.com</a></p>
+                <p id="gitT"><a href="#1">https://www.github.com</a></p>
+                </div>
+            </div>
+
+
+            <div class="col-md-8 py-5" >
+                <!-- second Colum -->
+
+                <h1 id="nameT2" class="text-center" style="font-weight: 980">
+                    ABHAY KUMAR DUBEY
+                </h1>
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="ObjectiveT">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis dolorem reiciendis commodi quidem magnam quisquam et est quas odit nihil tenetur sed dignissimos aspernatur in non asperiores dolore, alias illum.</p>
+                    </div>
+                </div>
+
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">print CV</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+ 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

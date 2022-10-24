@@ -1,0 +1,24 @@
+body{
+    background-color: blanchedalmond;
+}
+
+/* #cv-form{
+    /* display: none; *
+} */
+
+#cv-template{
+    display: none;
+}
+
+
+
+
+.myimage{
+    border-radius: 50%;
+    /* border: 1px solid red; */
+    width: 200px;
+    
+}
+.background{
+    background-color: aqua;
+}
